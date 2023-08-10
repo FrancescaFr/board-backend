@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask import abort, make_response # for error handling / represents current HTTP response
 from flask import jsonify # for return formatting
 from flask import request # represents current HTTP request
-from app import db
+from api.app.application import db
 from app.models.board import Board
 from app.models.card import Card
 
