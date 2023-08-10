@@ -1,6 +1,6 @@
 import pytest
-from api import create_app
-from api import db
+from app import create_app
+from app import db
 
 
 @pytest.fixture
