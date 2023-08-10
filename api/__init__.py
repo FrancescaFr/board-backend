@@ -40,8 +40,8 @@ def create_app(test_config=None):
     app.register_blueprint(boards_bp)
 
     # import models to make visible to app/db
-    from app.models.board import Board
-    from app.models.card import Card
+    from api.models.board import Board
+    from api.models.card import Card
     
     CORS(app)
     return app
