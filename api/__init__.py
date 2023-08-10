@@ -46,4 +46,4 @@ def create_app(test_config=None):
     CORS(app)
     return app
 
-create_app()
+# create_app()

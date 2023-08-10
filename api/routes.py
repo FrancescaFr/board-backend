@@ -2,9 +2,9 @@ from flask import Blueprint
 from flask import abort, make_response # for error handling / represents current HTTP response
 from flask import jsonify # for return formatting
 from flask import request # represents current HTTP request
-from app import db
-from app.models.board import Board
-from app.models.card import Card
+from api import db
+from api.models.board import Board
+from api.models.card import Card
 
 # What routes are needed?
     # want to be able to GET: board + all its cards
