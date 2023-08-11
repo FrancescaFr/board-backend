@@ -1,4 +1,4 @@
-from api.app.application import db
+from app.application import db
 
 class Board(db.Model):
     board_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
