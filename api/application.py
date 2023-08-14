@@ -15,6 +15,10 @@ from routes import routes
 
 def create_app(test_config=None):
     app = Flask(__name__)
+    # vercel test code
+    @app.route("/")
+    def home():
+        return "Hello from Vercel"
 
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
@@ -22,7 +26,7 @@ def create_app(test_config=None):
         "SQLALCHEMY_DATABASE_URL")
 
     # Import models here for Alembic setup
-    # from app.models.ExampleModel import ExampleModel
+    # from models.ExampleModel import ExampleModel
 
     # from .routes.routes import hello_bp
     # from .routes.routes import cards_bp
@@ -39,8 +43,8 @@ def create_app(test_config=None):
     app.register_blueprint(routes.boards_bp)
 
     # import models to make visible to app/db
-    from app.models.board import Board
-    from app.models.card import Card
+    # from models.board import Board
+    # from models.card import Card
     
     CORS(app)
     return app
