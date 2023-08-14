@@ -16,9 +16,9 @@ from routes import routes
 def create_app(test_config=None):
     app = Flask(__name__)
     # vercel test code
-    @app.route("/")
-    def home():
-        return "Hello from Vercel"
+    # @app.route("/")
+    # def home():
+    #     return "Hello from Vercel"
 
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
