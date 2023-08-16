@@ -13,10 +13,6 @@ load_dotenv()
 
 def create_app(test_config=None):
     app = Flask(__name__)
-    # vercel test code
-    @app.route("/")
-    def home():
-        return "Hello from Vercel"
 
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
@@ -26,7 +22,7 @@ def create_app(test_config=None):
     # Import models here for Alembic setup
     # from models.ExampleModel import ExampleModel
 
-    # from routes import hello_bp
+    from routes import hello_bp
     from routes import cards_bp
     from routes import boards_bp
 
@@ -36,7 +32,7 @@ def create_app(test_config=None):
     # Register Blueprints here
     # from .routes import example_bp
     # app.register_blueprint(example_bp)
-    # app.register_blueprint(hello_bp)
+    app.register_blueprint(hello_bp)
     app.register_blueprint(cards_bp)
     app.register_blueprint(boards_bp)
 
